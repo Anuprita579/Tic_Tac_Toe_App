@@ -17,7 +17,7 @@ Tic Tac Toe is a classic, easy-to-play game where two players take turns marking
 - **Track Winner**: Keep track of winner.
 
 ## Demo
-https://food-vista.vercel.app/
+https://github.com/Anuprita579/Tic_Tac_Toe_App/assets/141035951/a2fb962a-8aec-46df-be0d-0cf688b3500f
 
 ## Installation
 
