@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, SafeAreaView, FlatList, Pressable } from 'react-native';
 import Icons from './components/Icons';
 
@@ -8,6 +8,10 @@ export default function App() {
   const [gameWinner, setGameWinner] = useState("");
   const [gameState, setGameState] = useState(new Array(9).fill("empty", 0, 9));
 
+  useEffect(()=>{
+    checkIsWinner();
+  },[gameState])
+
   const reloadGame = () => {
     setIsCross(false);
     setGameWinner("");
@@ -15,7 +19,6 @@ export default function App() {
   }
 
   const checkIsWinner = () => {
-    console.log({'check1':gameState[0],'check2':gameState[1],'check3':gameState[2]});
     if (gameState[0] === gameState[1] && gameState[0] === gameState[2] && gameState[0] !== "empty") {
       setGameWinner(`${gameState[0]} won the game`);
     }
@@ -53,8 +56,6 @@ export default function App() {
     newGameState[itemNumber] = isCross ? 'cross' : 'circle';
     setGameState(newGameState);
     setIsCross(!isCross);
-
-    checkIsWinner();
   }
 
   return (
